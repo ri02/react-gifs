@@ -19,7 +19,9 @@ class App extends Component {
 
 
   search = (query) => {
-    giphy('oi0bQTwW0nMWq1zC28HY4dZkgb2hDP3W').search({
+    const gifKey = process.env.REACT_APP_GIF_API_KEY;
+
+    giphy(gifKey).search({
       q: query,
       rating: 'g',
       limit: 10
@@ -35,8 +37,6 @@ class App extends Component {
         selectedGifID: id
       });
     }
-
-
 
   render () {
     return (
